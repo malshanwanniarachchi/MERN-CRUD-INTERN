@@ -71,9 +71,9 @@ export default function Login() {
         <div className="row g-0">
           <div className="col-md-6 col-lg-5 d-none d-md-block">
           <video className="homepage-video" autoPlay loop muted style={{maxHeight:"650px"}} >
-      <source src="/images/login.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-  </video>
+              <source src="/images/login.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+          </video>
           </div>
           <div className="col-md-6 col-lg-7 d-flex align-items-center">
             <div className="card-body p-4 p-lg-5 text-black">

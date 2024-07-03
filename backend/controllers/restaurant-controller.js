@@ -11,7 +11,7 @@ const addRestaurant = async (req, res) => {
     try {
       await restaurant.save();
     } catch (error) {
-      return res.status(500).json({ message: "Add Restaurant failed!" });
+      return res.status(500).json({ message: "Add Customer failed!" });
     }
   
     return res.status(201).json({ message: "Add Subject successfully!", restaurant });
@@ -23,11 +23,11 @@ const addRestaurant = async (req, res) => {
     try {
         restaurant = await Restaurant.find().select("-_v -createdAt -updatedAt -addedBy");
     } catch (err) {
-      return res.status(500).json({ message: "Fetching Restaurant failed!" });
+      return res.status(500).json({ message: "Fetching Customer failed!" });
     }
   
     if (!restaurant) {
-      return res.status(404).json({ message: "No Restaurant found!" });
+      return res.status(404).json({ message: "No Customer found!" });
     }
     return res.status(200).json({ restaurant });
   };
@@ -40,7 +40,7 @@ const addRestaurant = async (req, res) => {
     try {
         restaurant = await Restaurant.findById(restaurantId);
     } catch (err) {
-      return res.status(404).json({ message: "Restaurant not found!" });
+      return res.status(404).json({ message: "customer not found!" });
     }
   
     return res.status(200).json({ restaurant });
@@ -54,10 +54,10 @@ const addRestaurant = async (req, res) => {
     try {
         restaurant = await Restaurant.findById(restaurantId);
       if (!restaurant) {
-        return res.status(404).json({ message: "Restaurant not found!" });
+        return res.status(404).json({ message: "Customer not found!" });
       }
     } catch (err) {
-      return res.status(500).json({ message: "Error finding Restaurant!" });
+      return res.status(500).json({ message: "Error finding customer!" });
     }
   
     if (Name !== undefined) {
@@ -75,9 +75,9 @@ const addRestaurant = async (req, res) => {
       await restaurant.save();
       return res
         .status(200)
-        .json({ message: "Restaurant updated successfully!", restaurant});
+        .json({ message: "Customer updated successfully!", restaurant});
     } catch (err) {
-      return res.status(500).json({ message: "Updating Restaurant failed!" });
+      return res.status(500).json({ message: "Updating Customer failed!" });
     }
   };
 
@@ -88,16 +88,16 @@ const addRestaurant = async (req, res) => {
     try {
         restaurant = await Restaurant.findById(restaurantId);
     } catch (err) {
-      return res.status(404).json({ message: "Restaurant not found!" });
+      return res.status(404).json({ message: "Customer not found!" });
     }
   
     try {
       await restaurant.deleteOne();
     } catch (err) {
-      return res.status(500).json({ message: "Deleting restaurant failed!", err });
+      return res.status(500).json({ message: "Deleting Customer failed!", err });
     }
   
-    return res.status(200).json({ message: "Restaurant deleted successfully!" });
+    return res.status(200).json({ message: "Customer deleted successfully!" });
   };
 
 

@@ -284,7 +284,7 @@ export default function RestaurantList() {
       <div className='container' id="RestaurantContainer">
         <h1 id="title">Dine Hub Restaurant</h1>
 
-        {/* <!-- Button trigger modal --> */}
+        {/* <!-- list --> */}
         <div id="addModal">
         <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addRestaurantModal">
           Add Customer
